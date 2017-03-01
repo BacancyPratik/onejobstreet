@@ -1,0 +1,11 @@
+<% @user_exps.each do |u| %>
+  <br />Current Designation : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.designation %>
+  <br />Current Company : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.company %>
+  <br />Experience : &nbsp;&nbsp;&nbsp;&nbsp;Years : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.working_since %>
+  <br />Months : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.months %>
+  <br />Current Location : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.location %>
+  <br />Duration of notice period : &nbsp;&nbsp;&nbsp;&nbsp;<%= u.notice %><br />
+  <%= link_to "Edit" , edit_user_path(u) %> &nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "Delete",user_path(u), method: :delete, data: { confirm: 'Are you sure?' }%><br /><br />
+<% end %>
+<br><br><br><%= link_to "Back" , new_user_path %>
